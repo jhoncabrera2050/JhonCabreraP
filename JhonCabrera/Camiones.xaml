@@ -5,15 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JhonCabrera"
         mc:Ignorable="d"
-        Title="Camiones" Height="200" Width="400">
+        Title="Camiones" Height="400" Width="500">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Peso maximo: "/>
-            <TextBox Name="txtNumeroDocumento"/>
-            <TextBlock Text="Placa"/>
-            <TextBox Name="txtPeso"/>
-            <TextBlock Text="Peso vacio"/>
-            <TextBox Name="txtTransportista"/>
+            <TextBlock Text="Peso máximo:"/>
+            <TextBox Name="txtPesoMaximo" Width="200" Margin="0 0 0 10"/>
+            <TextBlock Text="Placa:"/>
+            <TextBox Name="txtPlaca" Width="200" Margin="0 0 0 10"/>
+            <TextBlock Text="Peso vacío:"/>
+            <TextBox Name="txtPesoVacio" Width="200" Margin="0 0 0 10"/>
+            <Button Content="Agregar" Click="Agregar_Click" Width="100" Background="#007ACC" Foreground="White" Margin="0 10 0 0"/>
+
+            <!-- Lista de elementos agregados -->
+            <ListBox Name="lstCamiones" Width="300" Height="150" BorderBrush="Black" BorderThickness="1">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding PesoMaximo}" Width="100" Margin="5"/>
+                            <TextBlock Text="{Binding Placa}" Width="100" Margin="5"/>
+                            <TextBlock Text="{Binding PesoVacio}" Width="100" Margin="5"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </Grid>
 </Window>

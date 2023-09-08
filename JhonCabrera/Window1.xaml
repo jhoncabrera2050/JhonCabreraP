@@ -10,9 +10,7 @@
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
                 <MenuItem Header="_Operaciones" Click="Operaciones_Click" />
-                <MenuItem Header="_Mantenimiento">
-                    <MenuItem Header="_Camiones"  />
-                    <MenuItem Header="_Conductores" />
+                <MenuItem Header="_Mantenimiento" Click="Mantenimiento_Click">
                 </MenuItem>
                 <MenuItem Header="_Reportes" Click="Reportes_Click" />
                     <Separator />
