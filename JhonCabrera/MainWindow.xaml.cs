@@ -24,5 +24,26 @@ namespace JhonCabrera
         {
             InitializeComponent();
         }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Password;
+
+            if (username == "usuario" && password == "123")
+            {
+                // Credenciales válidas, abre la nueva ventana después del inicio de sesión.
+                Window1 window1 = new Window1();
+                window1.Show();
+
+                // Cierra la ventana de inicio de sesión actual.
+                this.Close();
+            }
+            else
+            {
+                // Credenciales incorrectas, muestra un mensaje de error.
+                txtError.Text = "Credenciales incorrectas";
+            }
+        }
     }
 }
